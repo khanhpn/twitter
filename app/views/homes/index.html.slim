@@ -1,0 +1,11 @@
+.row
+  = render partial: "homes/suggestion"
+.row
+  .table-responsive
+    table.table
+      tr
+        th name
+        th tweet
+      - @timelines.each do |timeline|
+        = render partial: "homes/detail", locals: {timeline: timeline}
+= paginate @timelines

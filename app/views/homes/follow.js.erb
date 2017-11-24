@@ -1,0 +1,4 @@
+<% if @result["following"] %>
+  $("#id_user_follow_<%= @id_str %>").hide();
+  $("#id_following_<%= @id_str %>").append("<span class='label label-info'>Following</span>");
+<% end %>

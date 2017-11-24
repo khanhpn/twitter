@@ -1,0 +1,19 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to "Twitter", root_path, class: "navbar-brand"
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+      ul.nav.navbar-nav
+        - if current_user.present?
+          li.active = link_to "Signout", destroy_user_session_path, method: :delete
+          li = link_to "Detail", user_detail_path(current_user.id) if current_user.present?
+        - else
+          - if devise_mapping.omniauthable?
+            - resource_class.omniauth_providers.each do |provider|
+              - if OmniAuth::Utils.camelize(provider) == "Twitter"
+                li.active = link_to image_tag('icon/twitter.png') + " Signin with twitter", omniauth_authorize_path(resource_name, provider)

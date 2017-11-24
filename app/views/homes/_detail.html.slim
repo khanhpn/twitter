@@ -1,0 +1,16 @@
+tr
+  th
+    = image_tag(timeline["user"]["profile_image_url"])
+    = link_to timeline["user"]["name"], "#", class: "btn btn-success"
+  th
+    = timeline["text"]
+    br
+    button.btn.btn-primary type="button"
+      | Retweet count&nbsp;
+      span.badge id="id_retweet_count_#{timeline['id_str']}" = timeline["retweet_count"]
+    | &nbsp;
+    span id="id_tweeted_#{timeline['id_str']}"
+    - if timeline["retweeted"] == false
+      = link_to "Retweet", retweet_path(timeline["id_str"]), class: "btn btn-success", remote: true, method: :post, id: "id_retweeted_#{timeline['id_str']}"
+    - else
+      span.label.label-default Tweeted

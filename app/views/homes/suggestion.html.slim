@@ -1,0 +1,22 @@
+.row
+  .panel.panel-warning
+    .panel-heading All users
+    .panel-body
+      table.table
+        tr
+          th name
+          th description
+          th Action
+        - @members.each do |member|
+          tr
+            th
+              = image_tag(member["profile_image_url"])
+              = link_to member["name"], "#", class: "btn btn-success"
+            th = member["description"]
+            th
+              span id="id_following_#{member['id_str']}"
+              - if member["following"] == false
+                = link_to "Follow", follow_path(member['id_str']), class: "btn btn-success", remote: true, method: :post, id: "id_user_follow_#{member['id_str']}"
+              - else
+                span.label.label-info Following
+= paginate @members

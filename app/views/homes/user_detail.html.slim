@@ -1,0 +1,19 @@
+.row
+  .panel.panel-warning
+    .panel-heading User detail
+    .panel-body
+      table.table
+        tr
+          th name
+          th description
+          th Following
+          th Tweets
+          th Friends
+        tr
+          th
+            = image_tag(@user["profile_image_url"])
+            = link_to @user["name"], "#", class: "btn btn-success"
+          th = @user["description"]
+          th = @user["followers_count"]
+          th = @user["statuses_count"]
+          th = @user["friends_count"]

@@ -1,0 +1,5 @@
+<% if @tweeted["retweeted"] %>
+  $("#id_tweeted_<%= @id_str %>").append("<span class='label label-default'>Tweeted</span>");
+  $("#id_retweeted_<%= @id_str %>").hide();
+  $("#id_retweet_count_<%= @id_str %>").text("<%= @tweeted['retweet_count'] %>");
+<% end %>

@@ -1,0 +1,14 @@
+.panel.panel-warning
+  .panel-heading All suggestions
+  .panel-body
+    table.table
+      tr
+        th name
+        th Follower
+      - @suggestions.each do |suggestion|
+        tr
+          th
+            = suggestion["name"]
+            | &nbsp;@
+            span.label.label-default = suggestion["slug"]
+          th = link_to "Detail", suggestion_path(suggestion["slug"]), class: "btn btn-success"
