@@ -61,6 +61,5 @@ gem 'devise', '~> 4.3.0'
 gem 'omniauth', '~> 1.7', '>= 1.7.1'
 gem 'omniauth-twitter', '~> 1.4'
 gem 'oauth'
-gem 'twitter', '~> 6.2'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
