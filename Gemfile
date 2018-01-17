@@ -57,6 +57,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'slim-rails', '~> 3.1', '>= 3.1.3'
 
+gem 'sidekiq'
 gem 'devise', '~> 4.3.0'
 gem 'omniauth', '~> 1.7', '>= 1.7.1'
 gem 'omniauth-twitter', '~> 1.4'
