@@ -10,3 +10,7 @@ Things you may want to cover:
 
 # twitter
 display tweets on home page and user can retweet and follow user
+# how to install this project
+* change information inside `config/database.yml`
+* install `package modules` via `yarn` with command: `yarn install`
+* run rails server via command: `rails server`
